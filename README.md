@@ -1,16 +1,25 @@
-# React + Vite
+### E-commerce store built with React + Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![API](https://img.shields.io/badge/API-DummyJSON-FF6B6B?style=flat-square)](https://dummyjson.com/)
+[![Status](https://img.shields.io/badge/status-in_progress-F59E0B?style=flat-square)]()
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 About
 
-## React Compiler
+A learning project — a fully functional online store built while studying **React** and **Tailwind CSS**. Product data is fetched from the public REST API [dummyjson.com](https://dummyjson.com/).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Built as hands-on practice during my transition from manual QA → frontend development.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- 🛍️ **Product catalog** — card grid with images, names and prices
+- 🔍 **Search & filtering** — filter by category *(in progress)*
+- 🛒 **Shopping cart** — add / remove items *(in progress)*
+- ⚡ **REST API integration** — data fetched via `fetch`
+
+---
