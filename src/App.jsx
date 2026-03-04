@@ -3,11 +3,13 @@ import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Catalog from './pages/Catalog.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Features from './components/Features.jsx'
 
 function Home() {
     return (<>
         <Header/>
         <Hero/>
+        <Features/>
     </>)
 }
 
