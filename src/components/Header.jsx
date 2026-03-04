@@ -10,13 +10,16 @@ function Header() {
                 <div>
                     <a href="#"><img src={logo} className="max-w-15" alt=""/></a>
                 </div>
-                <div className="flex items-center gap-1 text-m font-lg">
+                <div className="flex items-center gap-1 text-base font-medium">
                     <NavLink to="/"
-                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}> Main</NavLink>
+                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}>Main</NavLink>
                     <NavLink to="/catalog"
-                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}> Catalog</NavLink>
-                    <a href="#" className="pr-3 text-gray-600 hover:text-black transition-colors">Support</a>
-                    <a href="#" className="pr-3 text-gray-600 hover:text-black transition-colors">About Us</a>
+                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}>Catalog</NavLink>
+                    <a href="#"
+                       className="px-3 py-1.5 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">Support</a>
+                    <a href="#"
+                       className="px-3 py-1.5 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors">About
+                        Us</a>
                 </div>
             </div>
 
