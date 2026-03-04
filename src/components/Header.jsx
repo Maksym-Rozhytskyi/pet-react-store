@@ -10,7 +10,7 @@ function Header() {
                 <div>
                     <a href="#"><img src={logo} className="max-w-15" alt=""/></a>
                 </div>
-                <div className="flex gap-3 m-2 py-3 px-3 bg-white text-black font-medium text-lg">
+                <div className="flex gap-3 m-2 py-3 px-3 bg-white text-black font-normal text-lg">
                     <NavLink to="/"
                              className={({isActive}) => "pr-3 " + (isActive ? "text-black border-black pb-1" : "text-gray-600 hover:text-black transition-colors")}> Main</NavLink>
                     <NavLink to="/catalog"
