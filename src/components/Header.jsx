@@ -5,16 +5,16 @@ import logo from '../images/logo.svg';
 
 function Header() {
     return (<div className="max-w-7xl mx-auto w-full py-4 px-2">
-        <div className="flex justify-between items-center border-b">
+        <div className="flex justify-between items-center border-b pb-5">
             <div className='flex items-center justify-center gap-10'>
                 <div>
                     <a href="#"><img src={logo} className="max-w-15" alt=""/></a>
                 </div>
-                <div className="flex gap-3 m-2 py-3 px-3 bg-white text-black font-normal text-lg">
+                <div className="flex items-center gap-1 text-m font-lg">
                     <NavLink to="/"
-                             className={({isActive}) => "pr-3 " + (isActive ? "text-black border-black pb-1" : "text-gray-600 hover:text-black transition-colors")}> Main</NavLink>
+                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}> Main</NavLink>
                     <NavLink to="/catalog"
-                             className={({isActive}) => "pr-3 " + (isActive ? "text-black border-black pb-1" : "text-gray-600 hover:text-black transition-colors")}> Catalog</NavLink>
+                             className={({isActive}) => "px-3 py-1.5 rounded-lg " + (isActive ? "text-indigo-600 bg-indigo-50" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50 transition-colors")}> Catalog</NavLink>
                     <a href="#" className="pr-3 text-gray-600 hover:text-black transition-colors">Support</a>
                     <a href="#" className="pr-3 text-gray-600 hover:text-black transition-colors">About Us</a>
                 </div>
