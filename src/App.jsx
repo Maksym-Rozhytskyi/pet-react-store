@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx'
 import Catalog from './pages/Catalog.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Features from './components/Features.jsx'
-import Reviews from "./components/Reviews.jsx";
+import Reviews from './components/Reviews.jsx';
 
 function Home() {
     return (<>
@@ -18,9 +18,9 @@ function Home() {
 function App() {
     return (<BrowserRouter>
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/catalog" element={<Catalog/>}/>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/catalog' element={<Catalog/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     </BrowserRouter>)
 }

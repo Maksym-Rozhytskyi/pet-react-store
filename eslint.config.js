@@ -23,6 +23,8 @@ export default defineConfig([
       },
     },
     rules: {
+      quotes: ['error', 'single', { avoidEscape: true }],
+      'jsx-quotes': ['error', 'prefer-single'],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
