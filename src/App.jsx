@@ -5,6 +5,7 @@ import Catalog from './pages/Catalog.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Features from './components/Features.jsx'
 import Reviews from './components/Reviews.jsx';
+import Footer from './components/Footer.jsx';
 
 function Home() {
     return (<>
@@ -12,6 +13,7 @@ function Home() {
         <Hero/>
         <Features/>
         <Reviews/>
+        <Footer/>
     </>)
 }
 
