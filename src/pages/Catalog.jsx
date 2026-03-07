@@ -49,7 +49,8 @@ function Catalog() {
                         {product.length === 0 ? (<p>Loading...</p>) : (product.map(p => (<div key={p.id}
                                                                                               className='mb-6 box-border w-full rounded-3xl border border-gray-200 bg-white p-4'>
                             <div className='mb-4 flex items-center justify-center border-b border-gray-200 pb-5'>
-                                <img src={p.thumbnail} alt={p.title} className='w-1/2'/>
+                                <img src={p.thumbnail} alt={p.title}
+                                     className='flex items-center justify-center h-48'/>
                             </div>
                             <div>
                                 <p className='text-xs font-medium uppercase tracking-widest text-gray-400'>{p.brand}</p>
