@@ -2,7 +2,7 @@ import {Star} from 'lucide-react';
 
 function Reviews() {
     return (<div className='bg-blue-50'>
-            <div className='mx-auto w-full max-w-7xl px-4 py-15'>
+            <div className='layout-container py-15'>
                 <div className='flex flex-col items-center justify-center pb-15'>
                     <p className='pb-2 text-xl uppercase tracking-widest text-blue-600'>Testimonials</p>
                     <p className='pb-3 text-3xl font-bold'>What our customers say</p>

@@ -1,7 +1,7 @@
 function Hero() {
     return (
         <div className='bg-linear-to-b from-indigo-50 to-white'>
-            <div className='mx-auto w-full max-w-7xl px-4 pt-20 pb-24'>
+            <div className='layout-container pt-20 pb-24'>
                 <div className='flex w-1/2 flex-col'>
                     <p className='max-w-lg pb-6 text-6xl font-bold'>Products you can
                         <span

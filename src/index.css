@@ -5,3 +5,10 @@
     background-color: #ffffff;
     font-family: InterVariable, sans-serif;
 }
+
+.layout-container {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1rem;
+}

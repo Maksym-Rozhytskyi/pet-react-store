@@ -27,7 +27,7 @@ function Catalog() {
     return (<div>
         <Header/>
         <div className='overflow-hidden bg-slate-50'>
-            <div className='mx-auto w-full max-w-7xl px-2 py-5'>
+            <div className='layout-container py-5'>
                 <div className='mb-5'>
                     <p className='uppercase tracking-widest text-blue-600'>Store</p>
                     <p className='text-3xl font-bold'>Catalog</p>
@@ -45,9 +45,9 @@ function Catalog() {
                 {product.length === 0 && query ? (<div>
                     <p className='text-lg text-gray-400'>Nothing found</p>
                     <p className='text-sm text-gray-300'>Try a different search query</p>
-                </div>) : (<div className='flex flex-wrap gap-5'>
+                </div>) : (<div className='grid gap-5 lg:grid-cols-3'>
                         {product.length === 0 ? (<p>Loading...</p>) : (product.map(p => (<div key={p.id}
-                                                                                              className='mb-6 box-border w-100 rounded-3xl border border-gray-200 bg-white p-4'>
+                                                                                              className='mb-6 box-border w-full rounded-3xl border border-gray-200 bg-white p-4'>
                             <div className='mb-4 flex items-center justify-center border-b border-gray-200 pb-5'>
                                 <img src={p.thumbnail} alt={p.title} className='w-1/2'/>
                             </div>

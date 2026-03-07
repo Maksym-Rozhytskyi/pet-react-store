@@ -4,7 +4,7 @@ import logo from '../images/logo.svg';
 
 
 function Header() {
-    return (<div className='mx-auto w-full max-w-7xl px-6 pt-4 pb-0'>
+    return (<div className='layout-container pt-4 pb-0'>
         <div className='flex items-center justify-between pb-5'>
             <div className='flex items-center gap-10'>
                 <div>
@@ -32,4 +32,3 @@ function Header() {
 }
 
 export default Header
-

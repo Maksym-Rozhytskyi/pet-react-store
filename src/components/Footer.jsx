@@ -1,7 +1,7 @@
 import logo from '../images/logo.svg';
 
 function Footer() {
-    return (<div className='mx-auto w-full max-w-7xl px-4 pt-10 pb-5'>
+    return (<div className='layout-container pt-10 pb-5'>
         <div className='mb-5 flex justify-between'>
             <div className='flex flex-col items-start'>
                 <a href='#'><img src={logo} className='max-w-15 pb-5' alt=''/></a>

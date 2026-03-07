@@ -3,7 +3,7 @@ import {ArrowRight, Clock, Gift, Shield} from 'lucide-react';
 
 function Features() {
     return (
-        <div className='mx-auto w-full max-w-7xl px-4 pt-20 pb-24'>
+        <div className='layout-container pt-20 pb-24'>
             <div className='flex flex-col items-center justify-center pb-10'>
                 <p className='pb-2 text-xl uppercase tracking-widest text-blue-600'>Why choose us</p>
                 <p className='pb-3 text-3xl font-bold'>Shopping made simple</p>
