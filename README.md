@@ -19,8 +19,16 @@ Built as hands-on practice during my transition from manual QA → frontend deve
 ## ✨ Features
 
 - 🛍️ **Product catalog** — card grid with images, names and prices
-- 🔍 **Search & filtering** — filter by category *(in progress)*
-- 🛒 **Shopping cart** — add / remove items *(in progress)*
 - ⚡ **REST API integration** — data fetched via `fetch`
+- 🔍 **Search** — search by product name and brand via API
+- 🔍 *(IN PROGRESS)* **Filtering** — filter by category 
+- 🛒 *(IN PROGRESS)* **Shopping cart** — add / remove items 
 
+
+## 📄 Pages
+
+- **Main** — hero, features, reviews, footer
+- **Catalog** — product grid with search and pagination *(in progress)*
 ---
+
+Live demo: https://rozhik-pet-react-store.netlify.app
