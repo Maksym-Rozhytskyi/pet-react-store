@@ -26,14 +26,14 @@ function Catalog() {
 
     return (<div>
         <Header/>
-        <div className='bg-slate-50 overflow-hidden'>
+        <div className='overflow-hidden bg-slate-50'>
             <div className='mx-auto w-full max-w-7xl px-2 py-5'>
                 <div className='mb-5'>
                     <p className='uppercase tracking-widest text-blue-600'>Store</p>
                     <p className='text-3xl font-bold'>Catalog</p>
                 </div>
                 <div
-                    className='rounded-xl box-border border border-gray-400 bg-white px-3 py-2 text-sm mb-5 flex gap-2 items-center'>
+                    className='mb-5 flex items-center gap-2 box-border rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
                     <Search className='max-w-4 text-gray-500'/>
                     <input type='text'
                            className='w-full outline-none'
@@ -43,18 +43,18 @@ function Catalog() {
                     }}/>
                 </div>
                 {product.length === 0 && query ? (<div>
-                    <p className='text-gray-400 text-lg'>Nothing found</p>
-                    <p className='text-gray-300 text-sm'>Try a different search query</p>
+                    <p className='text-lg text-gray-400'>Nothing found</p>
+                    <p className='text-sm text-gray-300'>Try a different search query</p>
                 </div>) : (<div className='flex flex-wrap gap-5'>
                         {product.length === 0 ? (<p>Loading...</p>) : (product.map(p => (<div key={p.id}
                                                                                               className='mb-6 box-border w-100 rounded-3xl border border-gray-200 bg-white p-4'>
-                            <div className='mb-4 pb-5 flex items-center justify-center border-b border-gray-200'>
+                            <div className='mb-4 flex items-center justify-center border-b border-gray-200 pb-5'>
                                 <img src={p.thumbnail} alt={p.title} className='w-1/2'/>
                             </div>
                             <div>
                                 <p className='text-xs font-medium uppercase tracking-widest text-gray-400'>{p.brand}</p>
                                 <p className='pb-4 text-xl font-bold'>{p.title}</p>
-                                <p className='pb-4 text-sm text-gray-500 line-clamp-4'>{p.description}</p>
+                                <p className='pb-4 line-clamp-4 text-sm text-gray-500'>{p.description}</p>
                                 <div className='flex items-center justify-between pr-2'>
                                     <p className='text-2xl font-bold'>${p.price}</p>
                                     <button
