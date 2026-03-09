@@ -29,7 +29,7 @@ function Catalog() {
         <div className='overflow-hidden bg-slate-50'>
             <div className='layout-container py-5'>
                 <div className='mb-5'>
-                    <p className='uppercase tracking-widest text-blue-600'>Store</p>
+                    <p className='uppercase tracking-widest text-blue-600 pb-2'>Store</p>
                     <p className='text-3xl font-bold'>Catalog</p>
                 </div>
                 <div

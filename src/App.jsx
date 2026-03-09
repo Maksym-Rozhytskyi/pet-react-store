@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound.jsx'
 import Features from './components/Features.jsx'
 import Reviews from './components/Reviews.jsx';
 import Footer from './components/Footer.jsx';
+import AboutUs from './pages/AboutUs.jsx'
 
 function Home() {
     return (<>
@@ -23,6 +24,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/catalog' element={<Catalog/>}/>
             <Route path='*' element={<NotFound/>}/>
+            <Route path='/aboutUs' element={<AboutUs/>}/>
         </Routes>
     </BrowserRouter>)
 }

@@ -17,9 +17,8 @@ function Header() {
                              className={({isActive}) => 'rounded-lg px-3 py-1.5 ' + (isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900')}>Catalog</NavLink>
                     <a href='#'
                        className='rounded-lg px-3 py-1.5 text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900'>Support</a>
-                    <a href='#'
-                       className='rounded-lg px-3 py-1.5 text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900'>About
-                        Us</a>
+                    <NavLink to='/aboutUs'
+                             className={({isActive}) => 'rounded-lg px-3 py-1.5 ' + (isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900')}>About Us</NavLink>
                 </div>
             </div>
 
