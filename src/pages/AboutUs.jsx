@@ -80,7 +80,7 @@ function AboutUs() {
                             products are always one click away.</p>
                     </div>
                     <div className='flex-1 bg-indigo-600 text-white p-5 rounded-2xl transition-shadow hover:shadow-md'>
-                        <p className='font-bold text-2xl mb-2'>Our mission</p>
+                        <p className='font-bold text-2xl mb-5'>Our mission</p>
                         <p>Make online shopping feel effortless — for everyone, everywhere, every time.</p>
                     </div>
                 </div>
