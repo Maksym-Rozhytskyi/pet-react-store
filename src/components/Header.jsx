@@ -24,7 +24,10 @@ function Header() {
             </div>
 
             <div className='flex items-center gap-5'>
-                <a href='#'><ShoppingCart/></a>
+                <div className='relative'>
+                    <a href='#'><ShoppingCart/></a>
+                    <p className='absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white'>3</p>
+                </div>
                 <a href='#'> <User/></a>
             </div>
         </div>
