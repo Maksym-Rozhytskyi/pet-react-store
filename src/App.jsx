@@ -7,6 +7,7 @@ import Features from './components/Features.jsx'
 import Reviews from './components/Reviews.jsx';
 import Footer from './components/Footer.jsx';
 import AboutUs from './pages/AboutUs.jsx'
+import Product from './pages/Product.jsx';
 
 function Home() {
     return (<>
@@ -25,6 +26,7 @@ function App() {
             <Route path='/catalog' element={<Catalog/>}/>
             <Route path='*' element={<NotFound/>}/>
             <Route path='/aboutUs' element={<AboutUs/>}/>
+            <Route path='/product/:id' element={<Product/>}/>
         </Routes>
     </BrowserRouter>)
 }
