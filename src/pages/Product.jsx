@@ -39,17 +39,17 @@ function Product() {
                             className='w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-colors mb-12'>
                             Add to Cart
                         </button>
-                        <div className='flex gap-3'>
-                            <Truck/>
-                            <p className='pb-4 text-sm  tracking-wide text-gray-500'>{product.shippingInformation}</p>
+                        <div className='flex gap-3 items-center pb-4'>
+                            <Truck className='text-blue-600'/>
+                            <p className='text-sm  tracking-wide text-gray-500'>{product.shippingInformation}</p>
                         </div>
-                        <div className='flex gap-3'>
-                            <Shield/>
-                            <p className='pb-4 text-sm tracking-wide text-gray-500'>{product.warrantyInformation}</p>
+                        <div className='flex gap-3 items-center pb-4'>
+                            <Shield className='text-blue-600'/>
+                            <p className='text-sm tracking-wide text-gray-500'>{product.warrantyInformation}</p>
                         </div>
-                        <div className='flex gap-3'>
-                            <RotateCcw/>
-                            <p className='pb-4 text-sm tracking-wide text-gray-500'>{product.returnPolicy}</p>
+                        <div className='flex gap-3 items-center pb-4'>
+                            <RotateCcw className='text-blue-600'/>
+                            <p className='text-sm tracking-wide text-gray-500'>{product.returnPolicy}</p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ function Product() {
                                                 })}</p>
                                             </div>
                                         </div>
-                                        <p className='flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 text-blue-800'>{review.rating}</p>
+                                        <p className='flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-black'>{review.rating}</p>
                                     </div>
                                     <p className='text-gray-500 text-base'>{review.comment}</p>
                                 </div>
