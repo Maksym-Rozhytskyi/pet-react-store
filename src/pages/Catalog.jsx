@@ -4,6 +4,22 @@ import Footer from '../components/Footer.jsx';
 import {Search} from 'lucide-react';
 import {Link} from 'react-router-dom';
 
+const getPages = (current, total) => {
+    const pages = [];
+    if (total <= 7) {
+        for (let i = 1; i <= total; i++) pages.push(i);
+        return pages;
+    }
+    pages.push(1);
+    if (current > 3) pages.push('...');
+    for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
+        pages.push(i);
+    }
+    if (current < total - 2) pages.push('...');
+    pages.push(total);
+    return pages;
+}
+
 function Catalog() {
     const [product, setProduct] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
@@ -72,11 +88,10 @@ function Catalog() {
                         </Link>)))}
                 </div>)}
                 <div className='flex justify-center gap-5 mt-5'>
-                    {Array.from({length: totalPages}, (_, i) => i + 1).map(page => (
-                        <button key={page} onClick={() => setCurrentPage(page)}
-                                className={currentPage === page ? 'border p-1 text-xl font-bold underline' : 'text-gray-800'}>
-                            {page}
-                        </button>))}
+                    {getPages(currentPage, totalPages).map((page, i) => page === '...' ? (<span key={`dots-${i}`}
+                                                                                                className='w-9 h-9 flex items-center justify-center text-gray-400 text-sm'>…</span>) : (
+                        <button key={`page-${i}`} onClick={() => setCurrentPage(page)}
+                                className={'w-9 h-9 rounded-lg text-sm font-medium transition-colors ' + (currentPage === page ? 'bg-indigo-600 text-white' : 'text-gray-500 hover:bg-gray-100')}>{page}</button>))}
                 </div>
             </div>
         </div>
