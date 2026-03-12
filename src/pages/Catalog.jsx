@@ -3,6 +3,7 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import {Search} from 'lucide-react';
 import {Link} from 'react-router-dom';
+import SkeletonCard from '../components/SkeletonCard.jsx';
 
 const getPages = (current, total) => {
     const pages = [];
@@ -25,16 +26,19 @@ function Catalog() {
     const [currentPage, setCurrentPage] = useState(1);
     const [total, setTotal] = useState(0);
     const [query, setQuery] = useState('');
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const skip = (currentPage - 1) * 9;
         window.scrollTo(0, 0);
+        setLoading(true);
         const url = query ? `https://dummyjson.com/products/search?q=${query}&limit=9&skip=${skip}` : `https://dummyjson.com/products?limit=9&skip=${skip}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
                 setProduct(data.products)
                 setTotal(data.total)
+                setLoading(false);
             })
     }, [currentPage, query])
 
@@ -66,7 +70,7 @@ function Catalog() {
                     <p className='text-lg text-gray-400'>Nothing found</p>
                     <p className='text-sm text-gray-300'>Try a different search query</p>
                 </div>) : (<div className='grid gap-5 lg:grid-cols-3'>
-                    {product.length === 0 ? (<p>Loading...</p>) : (product.map(p => (
+                    {loading ? (Array.from({length: 9}).map((_, i) => (<SkeletonCard key={i}/>))) : (product.map(p => (
                         <Link key={p.id} to={`/product/${p.id}`}
                               className='block rounded-3xl border border-gray-200 bg-white p-4 hover:shadow-md transition-shadow'>
                             <div
