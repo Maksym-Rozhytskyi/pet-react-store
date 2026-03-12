@@ -8,7 +8,7 @@ function Header() {
         <div className='flex items-center justify-between pb-5'>
             <div className='flex items-center gap-10'>
                 <div>
-                    <a href='#'><img src={logo} className='max-w-15' alt=''/></a>
+                    <NavLink to='/'><img src={logo} className='max-w-15' alt=''/></NavLink>
                 </div>
                 <div className='flex items-center gap-1 text-base font-medium'>
                     <NavLink to='/'
