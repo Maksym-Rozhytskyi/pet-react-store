@@ -12,30 +12,30 @@ function Support() {
                     <p className='text-xl text-gray-500'>Browse the FAQ or send us a message — we'll get back to you
                         shortly.</p>
                 </div>
-                <div className='flex'>
+                <div className='flex gap-10'>
                     <div>
                         <p className='text-xl font-bold pb-5'>Frequently asked questions</p>
-                        <div className='bg-white mb-2'>
+                        <div className='bg-white mb-2 p-2 rounded-xl border border-gray-400'>
                             <p>How long does delivery take?</p>
                             <p>We deliver within 1–3 business days across the country. Express options may be available
                                 at checkout.</p>
                         </div>
-                        <div className='bg-white mb-2'>
+                        <div className='bg-white mb-2 p-2 rounded-xl border border-gray-400'>
                             <p>Can I return a product?</p>
                             <p>Yes — you can return any item within 30 days of purchase, no questions asked. Just
                                 contact us and we'll arrange the return.</p>
                         </div>
-                        <div className='bg-white mb-2'>
+                        <div className='bg-white mb-2 p-2 rounded-xl border border-gray-400'>
                             <p>What payment methods do you accept?</p>
                             <p>We accept all major credit and debit cards, Apple Pay, and Google Pay. All transactions
                                 are encrypted and secure.</p>
                         </div>
-                        <div className='bg-white mb-2'>
+                        <div className='bg-white mb-2 p-2 rounded-xl border border-gray-400'>
                             <p>How do I track my order?</p>
                             <p>Once your order ships, you'll receive a tracking link via email. You can also check your
                                 order status in your account.</p>
                         </div>
-                        <div className='bg-white mb-2'>
+                        <div className='bg-white mb-2 p-2 rounded-xl border border-gray-400'>
                             <p>Do you ship internationally?</p>
                             <p>Currently we only ship domestically. International shipping is something we're working on
                                 for the future.</p>
