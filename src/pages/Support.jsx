@@ -30,9 +30,8 @@ function Support() {
                             <div onClick={() => toggleItem(0)} className='cursor-pointer'>
                                 <div className='flex items-center justify-between'>
                                     <p className='font-bold'>How long does delivery take?</p>
-                                    {openItems[0]
-                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
-                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                    {openItems[0] ? <ChevronUp className='h-4 w-4 text-gray-500'/> :
+                                        <ChevronDown className='h-4 w-4 text-gray-500'/>}
                                 </div>
                                 {openItems[0] &&
                                     <p className='text-gray-500 text-sm'>We deliver within 1–3 business days across the
@@ -43,9 +42,8 @@ function Support() {
                             <div onClick={() => toggleItem(1)} className='cursor-pointer'>
                                 <div className='flex items-center justify-between'>
                                     <p className='font-bold'>Can I return a product?</p>
-                                    {openItems[1]
-                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
-                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                    {openItems[1] ? <ChevronUp className='h-4 w-4 text-gray-500'/> :
+                                        <ChevronDown className='h-4 w-4 text-gray-500'/>}
                                 </div>
                                 {openItems[1] &&
                                     <p className='text-gray-500 text-sm'>Yes — you can return any item within 30 days of
@@ -56,9 +54,8 @@ function Support() {
                             <div onClick={() => toggleItem(2)} className='cursor-pointer'>
                                 <div className='flex items-center justify-between'>
                                     <p className='font-bold'>What payment methods do you accept?</p>
-                                    {openItems[2]
-                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
-                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                    {openItems[2] ? <ChevronUp className='h-4 w-4 text-gray-500'/> :
+                                        <ChevronDown className='h-4 w-4 text-gray-500'/>}
                                 </div>
                                 {openItems[2] &&
                                     <p className='text-gray-500 text-sm'>We accept all major credit and debit cards,
@@ -70,12 +67,12 @@ function Support() {
                             <div onClick={() => toggleItem(3)} className='cursor-pointer'>
                                 <div className='flex items-center justify-between'>
                                     <p className='font-bold'>How do I track my order?</p>
-                                    {openItems[3]
-                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
-                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                    {openItems[3] ? <ChevronUp className='h-4 w-4 text-gray-500'/> :
+                                        <ChevronDown className='h-4 w-4 text-gray-500'/>}
                                 </div>
                                 {openItems[3] &&
-                                    <p className='text-gray-500 text-sm'>Once your order ships, you'll receive a tracking
+                                    <p className='text-gray-500 text-sm'>Once your order ships, you'll receive a
+                                        tracking
                                         link via email. You can also check your
                                         order status in your account.</p>}
                             </div>
@@ -84,9 +81,8 @@ function Support() {
                             <div onClick={() => toggleItem(4)} className='cursor-pointer'>
                                 <div className='flex items-center justify-between'>
                                     <p className='font-bold'>Do you ship internationally?</p>
-                                    {openItems[4]
-                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
-                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                    {openItems[4] ? <ChevronUp className='h-4 w-4 text-gray-500'/> :
+                                        <ChevronDown className='h-4 w-4 text-gray-500'/>}
                                 </div>
                                 {openItems[4] &&
                                     <p className='text-gray-500 text-sm'>Currently we only ship domestically.
@@ -95,7 +91,7 @@ function Support() {
                         </div>
                     </div>
                     <div className='flex-1'>
-                        <p>Send us a message</p>
+                        <p className='text-xl font-bold pb-5'>Send us a message</p>
                         <div
                             className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
                             <input type='text' className='w-full outline-none'
@@ -108,7 +104,7 @@ function Support() {
                         </div>
                         <div
                             className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                            <input type='text' className='w-full outline-none'
+                            <input type='text' className='w-full outline-none min-h-3'
                                    placeholder='Your message...'/>
                         </div>
                     </div>
