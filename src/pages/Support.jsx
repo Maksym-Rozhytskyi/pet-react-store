@@ -104,9 +104,11 @@ function Support() {
                         </div>
                         <div
                             className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                            <input type='text' className='w-full outline-none min-h-3'
-                                   placeholder='Your message...'/>
+                            <textarea className='w-full outline-none min-h-24 resize-none' placeholder='Your message...'/>
                         </div>
+                        <button className='w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-colors'>
+                            Send message
+                        </button>
                     </div>
                 </div>
             </div>
