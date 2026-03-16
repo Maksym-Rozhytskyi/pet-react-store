@@ -8,6 +8,7 @@ import Reviews from './components/Reviews.jsx';
 import Footer from './components/Footer.jsx';
 import AboutUs from './pages/AboutUs.jsx'
 import Product from './pages/Product.jsx';
+import Support from './pages/Support.jsx'
 
 function Home() {
     return (<>
@@ -27,6 +28,7 @@ function App() {
             <Route path='*' element={<NotFound/>}/>
             <Route path='/aboutUs' element={<AboutUs/>}/>
             <Route path='/product/:id' element={<Product/>}/>
+            <Route path='/support' element={<Support/>}/>
         </Routes>
     </BrowserRouter>)
 }
