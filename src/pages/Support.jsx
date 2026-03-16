@@ -1,9 +1,18 @@
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import {useState} from 'react';
+import {ChevronDown, ChevronUp} from 'lucide-react';
 
 function Support() {
-    const [open, setOpen] = useState(false);
+    const [openItems, setOpenItems] = useState([false, false, false, false, false]);
+
+    const toggleItem = (index) => {
+        setOpenItems((prev) => {
+            const next = [...prev];
+            next[index] = !next[index];
+            return next;
+        });
+    };
     return (<div>
         <Header/>
         <div className='bg-slate-50'>
@@ -18,43 +27,68 @@ function Support() {
                     <div className='flex-2'>
                         <p className='text-xl font-bold pb-5'>Frequently asked questions</p>
                         <div className='bg-white mb-2 p-5 rounded-xl border border-gray-400'>
-                            <div onClick={() => setOpen(!open)}>
-                                <p className='font-bold'>How long does delivery take?</p>
-                                {open &&
+                            <div onClick={() => toggleItem(0)} className='cursor-pointer'>
+                                <div className='flex items-center justify-between'>
+                                    <p className='font-bold'>How long does delivery take?</p>
+                                    {openItems[0]
+                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
+                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                </div>
+                                {openItems[0] &&
                                     <p className='text-gray-500 text-sm'>We deliver within 1–3 business days across the
                                         country. Express options may be available at checkout.</p>}
                             </div>
                         </div>
                         <div className='bg-white mb-2 p-5 rounded-xl border border-gray-400'>
-                            <div onClick={() => setOpen(!open)}>
-                                <p className='font-bold'>Can I return a product?</p>
-                                {open &&
+                            <div onClick={() => toggleItem(1)} className='cursor-pointer'>
+                                <div className='flex items-center justify-between'>
+                                    <p className='font-bold'>Can I return a product?</p>
+                                    {openItems[1]
+                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
+                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                </div>
+                                {openItems[1] &&
                                     <p className='text-gray-500 text-sm'>Yes — you can return any item within 30 days of
                                         purchase, no questions asked. Just contact us and we'll arrange the return.</p>}
                             </div>
                         </div>
                         <div className='bg-white mb-2 p-5 rounded-xl border border-gray-400'>
-                            <div onClick={() => setOpen(!open)}>
-                                <p className='font-bold'>What payment methods do you accept?</p>
-                                {open &&
+                            <div onClick={() => toggleItem(2)} className='cursor-pointer'>
+                                <div className='flex items-center justify-between'>
+                                    <p className='font-bold'>What payment methods do you accept?</p>
+                                    {openItems[2]
+                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
+                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                </div>
+                                {openItems[2] &&
                                     <p className='text-gray-500 text-sm'>We accept all major credit and debit cards,
                                         Apple Pay, and Google Pay. All transactions
                                         are encrypted and secure.</p>}
                             </div>
                         </div>
                         <div className='bg-white mb-2 p-5 rounded-xl border border-gray-400'>
-                            <div onClick={() => setOpen(!open)}>
-                                <p className='font-bold'>How do I track my order?</p>
-                                {open &&
+                            <div onClick={() => toggleItem(3)} className='cursor-pointer'>
+                                <div className='flex items-center justify-between'>
+                                    <p className='font-bold'>How do I track my order?</p>
+                                    {openItems[3]
+                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
+                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                </div>
+                                {openItems[3] &&
                                     <p className='text-gray-500 text-sm'>Once your order ships, you'll receive a tracking
                                         link via email. You can also check your
                                         order status in your account.</p>}
                             </div>
                         </div>
                         <div className='bg-white mb-2 p-5 rounded-xl border border-gray-400'>
-                            <div onClick={() => setOpen(!open)}>
-                                <p className='font-bold'>Do you ship internationally?</p>
-                                {open &&
+                            <div onClick={() => toggleItem(4)} className='cursor-pointer'>
+                                <div className='flex items-center justify-between'>
+                                    <p className='font-bold'>Do you ship internationally?</p>
+                                    {openItems[4]
+                                        ? <ChevronUp className='h-4 w-4 text-gray-500'/>
+                                        : <ChevronDown className='h-4 w-4 text-gray-500'/>}
+                                </div>
+                                {openItems[4] &&
                                     <p className='text-gray-500 text-sm'>Currently we only ship domestically.
                                         International shipping is something we're working on for the future.</p>}
                             </div>
