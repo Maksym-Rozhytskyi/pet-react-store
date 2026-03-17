@@ -9,6 +9,7 @@ import Footer from './components/Footer.jsx';
 import AboutUs from './pages/AboutUs.jsx'
 import Product from './pages/Product.jsx';
 import Support from './pages/Support.jsx'
+import {Toaster} from 'react-hot-toast';
 
 function Home() {
     return (<>
@@ -22,6 +23,7 @@ function Home() {
 
 function App() {
     return (<BrowserRouter>
+        <Toaster position='top-right'/>
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/catalog' element={<Catalog/>}/>

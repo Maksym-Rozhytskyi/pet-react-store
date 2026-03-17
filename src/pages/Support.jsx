@@ -2,6 +2,7 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import {ChevronDown, ChevronUp} from 'lucide-react';
 import {Disclosure} from '@headlessui/react';
+import ContactForm from '../components/ContactForm.jsx';
 
 function Support() {
     return (<div>
@@ -82,28 +83,8 @@ function Support() {
                                     future.</Disclosure.Panel>
                             </div>)}
                         </Disclosure>
-
                     </div>
-                    <div className='flex-1'>
-                        <p className='text-xl font-bold pb-5'>Send us a message</p>
-                        <div
-                            className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                            <input type='text' className='w-full outline-none' placeholder='Your name'/>
-                        </div>
-                        <div
-                            className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                            <input type='text' className='w-full outline-none' placeholder='Your email'/>
-                        </div>
-                        <div
-                            className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                                <textarea className='w-full outline-none min-h-24 resize-none'
-                                          placeholder='Your message...'/>
-                        </div>
-                        <button
-                            className='w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-colors'>
-                            Send message
-                        </button>
-                    </div>
+                    <ContactForm/>
                 </div>
             </div>
         </div>
