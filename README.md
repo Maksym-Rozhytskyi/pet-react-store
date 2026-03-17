@@ -28,7 +28,7 @@ Built as hands-on practice during my transition from manual QA → frontend deve
 ## 📄 Pages
 
 - **Main** — hero, features, reviews, footer
-- **Catalog** — product grid with search and pagination *(in progress)*
+- **Catalog** — product grid with search and pagination
 ---
 
 Live demo: https://rozhik-pet-react-store.netlify.app
