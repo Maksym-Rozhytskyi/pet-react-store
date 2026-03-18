@@ -27,20 +27,41 @@ function Catalog() {
     const [total, setTotal] = useState(0);
     const [query, setQuery] = useState('');
     const [loading, setLoading] = useState(true);
+    const [sortBy, setSortBy] = useState('');
+    const [order, setOrder] = useState('asc');
+    const [categories, setCategories] = useState([]);
+    const [activeCategory, setActiveCategory] = useState('');
 
     useEffect(() => {
         const skip = (currentPage - 1) * 9;
         window.scrollTo(0, 0);
         setLoading(true);
-        const url = query ? `https://dummyjson.com/products/search?q=${query}&limit=9&skip=${skip}` : `https://dummyjson.com/products?limit=9&skip=${skip}`
+
+        const sortParams = sortBy ? `&sortBy=${sortBy}&order=${order}` : '';
+
+        let url;
+        if (activeCategory) {
+            url = `https://dummyjson.com/products/category/${activeCategory}?limit=9&skip=${skip}${sortParams}`;
+        } else if (query) {
+            url = `https://dummyjson.com/products/search?q=${query}&limit=9&skip=${skip}${sortParams}`;
+        } else {
+            url = `https://dummyjson.com/products?limit=9&skip=${skip}${sortParams}`;
+        }
+
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setProduct(data.products)
-                setTotal(data.total)
+                setProduct(data.products);
+                setTotal(data.total);
                 setLoading(false);
-            })
-    }, [currentPage, query])
+            });
+    }, [currentPage, query, activeCategory, sortBy, order])
+
+    useEffect(() => {
+        fetch('https://dummyjson.com/products/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))
+    }, [])
 
     const totalPages = Math.ceil(total / 9)
 
@@ -52,19 +73,59 @@ function Catalog() {
                     <p className='uppercase tracking-widest text-blue-600 pb-2'>Store</p>
                     <p className='text-3xl font-bold'>Catalog</p>
                 </div>
-                <div
-                    className='mb-5 flex items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
-                    <Search className='max-w-4 text-gray-500'/>
-                    <input
-                        type='text'
-                        className='w-full outline-none'
-                        value={query}
-                        placeholder='Search products or brand...'
+                <div className='flex gap-3 mb-5'>
+                    <div
+                        className='flex flex-1 items-center gap-2 rounded-xl border border-gray-400 bg-white px-3 py-2 text-sm'>
+                        <Search className='max-w-4 text-gray-500'/>
+                        <input
+                            type='text'
+                            className='w-full outline-none'
+                            value={query}
+                            placeholder='Search products or brand...'
+                            onChange={e => {
+                                setQuery(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                        />
+                    </div>
+                    <select
+                        value={sortBy ? `${sortBy}-${order}` : ''}
                         onChange={e => {
-                            setQuery(e.target.value);
+                            const val = e.target.value;
+                            if (!val) {
+                                setSortBy('');
+                            } else {
+                                const [field, dir] = val.split('-');
+                                setSortBy(field);
+                                setOrder(dir);
+                            }
                             setCurrentPage(1);
                         }}
-                    />
+                        className='px-4 rounded-xl border border-gray-200 bg-white text-sm text-gray-500 focus:outline-none focus:border-indigo-400 transition-colors'>
+                        <option value=''>Sort by</option>
+                        <option value='price-asc'>Price: low to high</option>
+                        <option value='price-desc'>Price: high to low</option>
+                        <option value='title-asc'>Name: A → Z</option>
+                    </select>
+                </div>
+                <div className='flex flex-wrap gap-2 mb-5'>
+                    <button
+                        onClick={() => {
+                            setActiveCategory('');
+                            setCurrentPage(1);
+                        }}
+                        className={'px-4 py-1.5 rounded-full text-sm font-medium transition-colors ' + (activeCategory === '' ? 'bg-indigo-600 text-white' : 'bg-white border border-gray-200 text-gray-500 hover:bg-gray-50')}>
+                        All
+                    </button>
+                    {categories.map(cat => (<button
+                        key={cat.slug}
+                        onClick={() => {
+                            setActiveCategory(cat.slug);
+                            setCurrentPage(1);
+                        }}
+                        className={'px-4 py-1.5 rounded-full text-sm font-medium transition-colors ' + (activeCategory === cat.slug ? 'bg-indigo-600 text-white' : 'bg-white border border-gray-200 text-gray-500 hover:bg-gray-50')}>
+                        {cat.name}
+                    </button>))}
                 </div>
                 {product.length === 0 && query ? (<div>
                     <p className='text-lg text-gray-400'>Nothing found</p>
