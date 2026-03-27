@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
-import { RotateCcw, Shield, Truck } from 'lucide-react';
+import { RotateCcw, Shield, Truck, ArrowLeft } from 'lucide-react';
 
 function Product() {
   const { id } = useParams();
@@ -20,7 +20,13 @@ function Product() {
       <Header />
       <div className='bg-slate-50'>
         <div className='layout-container py-5'>
-          <Link to='/catalog'>← Back to Catalog</Link>
+          <Link
+            to='/catalog'
+            className='mb-8 flex w-fit items-center gap-2 text-gray-600 transition-colors hover:text-indigo-600'
+          >
+            <ArrowLeft size={16} />
+            Back to Catalog
+          </Link>
           <div className='mt-4 mb-12 flex gap-10'>
             <div
               className='flex flex-1 items-center justify-center rounded-3xl border border-gray-100 bg-white'
