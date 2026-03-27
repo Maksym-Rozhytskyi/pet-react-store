@@ -11,6 +11,7 @@ import Product from './pages/Product.jsx';
 import Support from './pages/Support.jsx';
 import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
+import BackToTop from './components/BackToTop.jsx';
 
 function Home() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <BackToTop />
       <Toaster position='top-right' />
       <Routes>
         <Route path='/' element={<Home />} />
