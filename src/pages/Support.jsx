@@ -3,8 +3,12 @@ import Footer from '../components/Footer.jsx';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Disclosure } from '@headlessui/react';
 import ContactForm from '../components/ContactForm.jsx';
+import { useEffect } from 'react';
 
 function Support() {
+  useEffect(() => {
+    document.title = 'Support';
+  }, []);
   return (
     <div>
       <Header />

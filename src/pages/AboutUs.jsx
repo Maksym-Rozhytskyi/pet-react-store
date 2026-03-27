@@ -2,8 +2,12 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import Features from '../components/Features.jsx';
 import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function AboutUs() {
+  useEffect(() => {
+    document.title = 'About Us';
+  }, []);
   return (
     <div>
       <Header />

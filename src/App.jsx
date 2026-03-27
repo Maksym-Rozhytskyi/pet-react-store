@@ -10,8 +10,13 @@ import AboutUs from './pages/AboutUs.jsx';
 import Product from './pages/Product.jsx';
 import Support from './pages/Support.jsx';
 import { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Main Page';
+  }, []);
+
   return (
     <>
       <Header />

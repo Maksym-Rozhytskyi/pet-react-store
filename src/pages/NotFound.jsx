@@ -1,8 +1,12 @@
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function NotFound() {
+  useEffect(() => {
+    document.title = 'Not Found';
+  }, []);
   return (
     <div className='flex min-h-screen flex-col'>
       <Header />

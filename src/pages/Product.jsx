@@ -11,7 +11,10 @@ function Product() {
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
       .then((res) => res.json())
-      .then((data) => setProduct(data));
+      .then((data) => {
+        setProduct(data);
+        document.title = `${data.title}`;
+      });
   }, [id]);
 
   if (!product) return <p>Loading...</p>;

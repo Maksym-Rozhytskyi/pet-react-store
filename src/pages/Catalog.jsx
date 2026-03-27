@@ -37,6 +37,10 @@ function Catalog() {
   const [activeCategory, setActiveCategory] = useState('');
 
   useEffect(() => {
+    document.title = 'Catalog';
+  }, []);
+
+  useEffect(() => {
     const skip = (currentPage - 1) * 9;
     window.scrollTo(0, 0);
     setLoading(true);
