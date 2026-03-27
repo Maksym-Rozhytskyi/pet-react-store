@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 function Hero() {
   return (
     <div className='bg-linear-to-b from-indigo-50 to-white'>
@@ -13,15 +15,15 @@ function Hero() {
             <span className='font-bold text-indigo-500'> one place.</span>
           </p>
           <div className='flex items-center gap-2 pb-10'>
-            <a
-              href=''
+            <NavLink
+              to='/catalog'
               className='rounded-xl bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-700'
             >
               Browse Catalog
-            </a>
-            <a href='' className='px-6 py-3 text-gray-500'>
+            </NavLink>
+            <NavLink to='/AboutUs' className='px-6 py-3 text-gray-500'>
               Learn More →
-            </a>
+            </NavLink>
           </div>
           <div className='flex gap-10'>
             <div>
