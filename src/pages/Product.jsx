@@ -3,10 +3,22 @@ import { useEffect, useState } from 'react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import { RotateCcw, Shield, Truck, ArrowLeft } from 'lucide-react';
+import useCartStore from '../store/cartStore.js';
+import toast from 'react-hot-toast';
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const addItem = useCartStore((state) => state.addItem);
+
+  const handleAddToCart = () => {
+    addItem(product);
+    toast.success(
+      <span>
+        <b>{product.title}</b> added to cart!
+      </span>,
+    );
+  };
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -60,7 +72,10 @@ function Product() {
                 {product.description}
               </p>
               <p className='pb-8 text-4xl font-bold'>${product.price}</p>
-              <button className='mb-12 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700'>
+              <button
+                onClick={handleAddToCart}
+                className='mb-12 w-full rounded-xl bg-indigo-600 py-3 font-semibold text-white transition-colors hover:bg-indigo-700'
+              >
                 Add to Cart
               </button>
               <div className='flex items-center gap-3 pb-4'>

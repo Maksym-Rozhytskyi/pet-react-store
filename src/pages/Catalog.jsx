@@ -4,6 +4,8 @@ import Footer from '../components/Footer.jsx';
 import { Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SkeletonCard from '../components/SkeletonCard.jsx';
+import useCartStore from '../store/cartStore.js';
+import toast from 'react-hot-toast';
 
 const getPages = (current, total) => {
   const pages = [];
@@ -26,6 +28,7 @@ const getPages = (current, total) => {
 };
 
 function Catalog() {
+  const addItem = useCartStore((state) => state.addItem);
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
@@ -188,7 +191,14 @@ function Catalog() {
                         </p>
                         <div className='flex items-center justify-between pr-2'>
                           <p className='text-2xl font-bold'>${p.price}</p>
-                          <button className='rounded-xl bg-blue-600 px-3 py-1 font-bold text-white transition-colors hover:bg-blue-700'>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              addItem(p);
+                              toast.success(<span><b>{p.title}</b> added to cart!</span>);
+                            }}
+                            className='rounded-xl bg-blue-600 px-3 py-1 font-bold text-white transition-colors hover:bg-blue-700'
+                          >
                             Buy
                           </button>
                         </div>
