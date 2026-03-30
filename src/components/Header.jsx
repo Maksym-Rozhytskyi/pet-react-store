@@ -62,7 +62,7 @@ function Header() {
 
         <div className='flex items-center gap-5'>
           <div className='relative'>
-            <a href='#'>
+            <a href='#' aria-label='Cart'>
               <ShoppingCart />
             </a>
             <p className='absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white'>

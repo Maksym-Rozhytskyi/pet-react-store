@@ -21,7 +21,7 @@ function Hero() {
             >
               Browse Catalog
             </NavLink>
-            <NavLink to='/AboutUs' className='px-6 py-3 text-gray-500'>
+            <NavLink to='/aboutUs' className='px-6 py-3 text-gray-500'>
               Learn More →
             </NavLink>
           </div>

@@ -1,4 +1,5 @@
 import logo from '../images/logo.svg';
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -13,13 +14,17 @@ function Footer() {
           </p>
           <p className='text-gray-500'>Fast delivery, easy returns.</p>
         </div>
-        <div>
+        <div className='flex flex-col items-start'>
           <p className='mb-3 font-semibold'>Shop</p>
-          <ul>
-            <li className='text-gray-400'>Catalog</li>
-            <li className='text-gray-400'>About us</li>
-            <li className='text-gray-400'>Support</li>
-          </ul>
+          <NavLink to='/catalog' className='text-gray-400'>
+            Catalog
+          </NavLink>
+          <NavLink to='/aboutUs' className='text-gray-400'>
+            About us
+          </NavLink>
+          <NavLink to='/support' className='text-gray-400'>
+            Support
+          </NavLink>
         </div>
       </div>
       <div className='flex flex-col items-center border-t border-gray-200'>
